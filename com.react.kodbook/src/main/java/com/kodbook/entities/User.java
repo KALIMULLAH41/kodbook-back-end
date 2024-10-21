@@ -15,7 +15,6 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 
 
-
 @Entity
 public class User {
 	
@@ -149,7 +148,7 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
 				+ ", dob=" + dob + ", gender=" + gender + ", city=" + city + ", bio=" + bio + ", college=" + college
-				+ ", linkedIn=" + linkedIn + ", gitHub=" + gitHub + ", posts=" + posts + ", profilePic="
+				+ ", linkedIn=" + linkedIn + ", gitHub=" + gitHub + ", profilePic="
 				+ Arrays.toString(profilePic) + "]";
 	}
 	

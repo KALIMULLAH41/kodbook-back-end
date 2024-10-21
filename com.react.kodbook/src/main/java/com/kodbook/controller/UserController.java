@@ -1,14 +1,13 @@
 package com.kodbook.controller;
 
-
 import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,6 +30,7 @@ public class UserController {
 	UserService service;
 	@Autowired
 	PostService postService;
+	
 	@PostMapping("/signUp")
 	public String addUser(@RequestBody User user) {
 		//user exists?
@@ -46,14 +46,14 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(@RequestBody LoginData user)	{
 		
-		boolean status = service.validateUser(user.getUsername(),user.getPassword());
+		boolean status = service.validateUser(user.getUsername(), user.getPassword());
 		if(status == true) {
 			List<Post> allPosts = postService.fetchAllPosts();
 			
-			//session.setAttribute("username", user.getUsername());
-			//model.addAttribute("session", session);
+//			session.setAttribute("username", user.getUsername());
+//			model.addAttribute("session", session);
 			
-		//	model.addAttribute("allPosts", allPosts);
+			//model.addAttribute("allPosts", allPosts);
 			
 			return "valid";
 		}
@@ -92,5 +92,4 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "myProfile";
 	}
-	
 }

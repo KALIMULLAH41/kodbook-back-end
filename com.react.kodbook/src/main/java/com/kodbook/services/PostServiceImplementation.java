@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import com.kodbook.entities.Post;
 import com.kodbook.repositories.PostRepository;
 
+
 @Service
 public class PostServiceImplementation
 		implements PostService{
-	
 	
 	@Autowired
 	PostRepository repo;
@@ -40,5 +40,4 @@ public class PostServiceImplementation
 	public void updatePost(Post post) {
 		repo.save(post);
 	}
-	
 }

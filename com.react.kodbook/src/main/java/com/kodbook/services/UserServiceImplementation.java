@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.kodbook.entities.User;
 import com.kodbook.repositories.UserRepository;
-
 @Service
 public class UserServiceImplementation
       implements UserService{
@@ -48,7 +47,4 @@ public class UserServiceImplementation
 	public void updateUser(User user) {
 		repo.save(user);
 	}
-	
-	
-	
 }
